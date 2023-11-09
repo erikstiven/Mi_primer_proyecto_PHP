@@ -28,8 +28,16 @@ Route::get('cursos/create', function(){
     return "En esta pagina podras crear un curso";
 });
 
-Route::get('cursos/{curso}', function ($curso) {
-    /*return view('welcome');*/
-    return "Bienvenidos a mis cursos: $curso";
+// Route::get('cursos/{curso}', function ($curso) {
+//     /*return view('welcome');*/
+//     return "Bienvenidos a mis cursos: $curso";
+// });
+
+route::get('cursos/{curso}/{categoria?}',function($curso, $categoria = null){//valor de categoria opcional
+    if($categoria){
+        return "Bienvenido al curso $curso, de la categoria $categoria";
+    }else{
+        return "Bienvenido al curso $curso";
+    }
 });
 
