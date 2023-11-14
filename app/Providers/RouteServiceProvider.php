@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
+    // protected $namespace = 'App\Http\Controllers';-> se define para usar los controladores de la manera antigua
     /**
      * The path to your application's "home" route.
      *
@@ -34,6 +35,7 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
+                // ->namespace($this->namespace) -> se usa cuando defino controladores de la manera antiguaa
                 ->group(base_path('routes/web.php'));
         });
     }
